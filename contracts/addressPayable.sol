@@ -61,3 +61,17 @@ contract Contract {
 
 }
 
+function addGame(address gameAddress) public {
+		ArcadeGame game = ArcadeGame(gameAddress);
+		(uint x, uint y, uint z) = game.scores();
+		if(x > highscore) {
+			highscore = x;
+		}
+		if(y > highscore) {
+			highscore = y;
+		}
+		if(z > highscore) {
+			highscore = z;
+		}
+	}
+}
